@@ -7,7 +7,7 @@ var chico = [
     picture: "https://www.backpacker.com/.image/c_fit%2Ccs_srgb%2Ch_406%2Cq_50%2Cw_620/MTQ0OTE0MDQzNjc3NjQ4NjEz/ravine-falls.jpg",
     from: "backpacker.com"
   },
-  { desription: "Flumes",
+  { description: "Flumes",
     picture: "http://static.panoramio.com/photos/large/37573219.jpg",
     from: "panoramio.com"
   },
@@ -20,11 +20,12 @@ var chico = [
     from: "csuchico.edu"
   },
   { description: "Big Chico Creek",
-    picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Big_Chico_Creek_in_Upper_Bidwell_Park.jpg/1200px-Big_Chico_Creek_in_Upper_Bidwell_Park.jpg",
-    from: "wikipedia.org"
+    picture: "http://i1118.photobucket.com/albums/k603/caddisfly547/ChicoCreek01s.jpg",
+    from: "photobucket.com"
   }
 ];
 var current = 0;
+
 function shuffleGallery()
 {
   var randomValue = chico[Math.floor(Math.random()*chico.length)];
@@ -35,5 +36,7 @@ function shuffleGallery()
   current = randomValue;
 
   //Prints the value of RandomValue
-  console.log(randomValue);
+  document.getElementById("picture").src = current.picture;
+  document.getElementById("caption").innerHTML = current.description;
+  document.getElementById("source").innerHTML = current.from;
 }
